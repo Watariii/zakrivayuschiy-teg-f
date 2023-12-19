@@ -1,0 +1,19 @@
+{
+  "name": "zakrivayuschiy-teg-f",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Watariii/zakrivayuschiy-teg-f.git"
+  },
+  "author": "Nikita Sukhov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Watariii/zakrivayuschiy-teg-f/issues"
+  },
+  "homepage": "https://github.com/Watariii/zakrivayuschiy-teg-f#readme"
+}
