@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Watariii/zakrivayuschiy-teg-f/issues"
   },
-  "homepage": "https://github.com/Watariii/zakrivayuschiy-teg-f#readme"
+  "homepage": "https://github.com/Watariii/zakrivayuschiy-teg-f#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-pug": "^5.0.0"
+  }
 }
