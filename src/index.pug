@@ -1,6 +1,25 @@
 doctype html
 html(lang="ru")
     head
-        title Главная страница сайта
-    body
-        h1 Привет!
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Закрывающий тег
+        link(rel="stylesheet", href="./fonts.css")
+        link(rel="stylesheet", href="./variables.css")
+        link(rel="stylesheet", href="./globals.css")
+        link(rel="stylesheet", href="./style.css")
+        link(rel="stylesheet", href="./animations.css")
+        link(rel="stylesheet", href="./themes.css")
+        script(src="./scripts/set-theme.js")
+    body.page
+        header.header
+            nav.theme-menu.header__theme-menu
+                ul.theme-menu__list
+                    li.theme-menu__item 
+                        button.theme-menu__button(type="button", data-theme="dark") Темно
+                    li.theme-menu__item 
+                        button.theme-menu__button(type="button", data-theme="auto", disabled) Авто
+                    li.theme-menu__item 
+                        button.theme-menu__button(type="button", data-theme="light") Светло
+        main.content
+        script(src="./scripts/like.js") 
