@@ -1,0 +1,133 @@
+/* Здесь вы напишете основную часть стилей страницы.
+
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ theme-dark — класс тёмной темы
+✦ theme-light — класс светлой темы
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
+
+*/
+.page,
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page {
+  gap: 100px;
+  margin: 0 auto;
+  min-inline-size: 320px;
+  max-inline-size: 1440px;
+  min-block-size: 100dvb;
+  background-size: 100% 667px;
+  background-repeat: no-repeat;
+}
+
+.header {
+  margin-block-start: 100px;
+  inline-size: 100%;
+  font-family: "Press Start 2P", Arial, sans-serif;
+  font-weight: 400;
+}
+
+.header__logo {
+  margin-block-start: 120px;
+  font-size: 49px;
+  line-height: 49px;
+  letter-spacing: 0%;
+}
+
+.header__title {
+  margin-block-start: 20px;
+  font-size: 14px;
+}
+
+.header__theme-menu {
+  margin: 25px auto;
+}
+
+.theme-menu__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 14px;
+  left: 10px;
+}
+
+.theme-menu__item,
+.theme-menu__button {
+  margin: 0;
+  padding: 0;
+  block-size: 14px;
+}
+
+.theme-menu__button {
+  background-color: transparent;
+  font-size: 14px;
+  border: none;
+  text-transform: uppercase;
+}
+
+/* нужно будет поменять */
+.theme-menu__button:hover {
+  text-decoration: underline;
+  opacity: 0.6;
+}
+
+.theme-menu__button:disabled {
+  text-decoration: none;
+  opacity: 1;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  left: -20px;
+}
+
+.content {
+  inline-size: 100%;
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  align-items: center;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.article {
+  inline-size: 100%;
+}
+
+.article__title {
+  font-variation-settings: var(--font-weight);
+  font-size: 18px;
+  line-height: 22px;
+}
+
+@media (width >= 700px) {
+  .header {
+    inline-size: 700px;
+  }
+
+  .header__logo {
+    font-size: 65px;
+    line-height: 65px;
+  }
+
+  .header__title {
+    font-size: 23px;
+    line-height: 23px;
+  }
+
+  .content {
+    inline-size: 700px;
+  }
+}

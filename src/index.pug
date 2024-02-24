@@ -1,25 +1,51 @@
 doctype html
 html(lang="ru")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Закрывающий тег
-        link(rel="stylesheet", href="./fonts.css")
-        link(rel="stylesheet", href="./variables.css")
-        link(rel="stylesheet", href="./globals.css")
-        link(rel="stylesheet", href="./style.css")
-        link(rel="stylesheet", href="./animations.css")
-        link(rel="stylesheet", href="./themes.css")
-        script(src="./scripts/set-theme.js")
-    body.page
-        header.header
-            nav.theme-menu.header__theme-menu
-                ul.theme-menu__list
-                    li.theme-menu__item 
-                        button.theme-menu__button(type="button", data-theme="dark") Темно
-                    li.theme-menu__item 
-                        button.theme-menu__button(type="button", data-theme="auto", disabled) Авто
-                    li.theme-menu__item 
-                        button.theme-menu__button(type="button", data-theme="light") Светло
-        main.content
-        script(src="./scripts/like.js") 
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(
+      name="description",
+      content="Страница об учёбе, рефлексии, о тяжести обучения новому"
+    )
+    meta(name="color-scheme", content="dark light")
+    link(rel="stylesheet", href="./fonts/fonts.css")
+    link(rel="stylesheet", href="./bundle.css")
+    link(rel="icon", href="./images/favicon.ico", sizes="any")
+    link(rel="icon", href="./images/favicon.svg", type="image/svg+xml")
+    link(rel="apple-touch-icon", href="./images/favicon.png")
+    title Закрывающий тег
+    script(src="./scripts/set-theme.js")
+  body.page
+    header.header
+      //- мнемоники &lt; = <, &gt = >.
+      h1.header__logo &lt;/HTML&gt;
+      h2.header__title ЗАКРЫВАЮЩИЙ ТЕГ
+      nav.theme-menu.header__theme-menu
+        ul.theme-menu__list
+          li.theme-menu__item
+            button.theme-menu__button(type="button", data-theme="dark") Темно
+          li.theme-menu__item
+            button.theme-menu__button(
+              type="button",
+              data-theme="auto",
+              disabled
+            ) Авто
+          li.theme-menu__item
+            button.theme-menu__button(type="button", data-theme="light") Светло
+    main.content
+      article.article
+        h2.article__title Фритрек и нулевой спринт: Подготовка к работе
+        img.article__image(src="#", alt="#")
+        p.article__paragraph
+        .article__button-section
+          .like
+          button.like-button Like
+      article.article
+        h2.article__title Фритрек и нулевой спринт: Подготовка к работе
+        img.article__image(src="#", alt="#")
+        p.article__paragraph
+        .article__button-section
+          .like
+          button.like-button Like
+  footer.footer
+  script(src="./scripts/like.js") 

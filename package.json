@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo Привет!",
+    "check": "prettier --check ./src/**/*.{pug,scss,html,css,js} --plugin=@prettier/plugin-pug",
+    "format": "prettier --write ./src/**/*.{pug,scss,html,css,js} --plugin=@prettier/plugin-pug",
+    "lint": "stylelint './src/**/*.{css,scss}'",
+    "lintfix": "stylelint './src/**/*.{css,scss}' --fix",
+    "dev": "gulp"
   },
   "repository": {
     "type": "git",
@@ -17,13 +22,21 @@
   },
   "homepage": "https://github.com/Watariii/zakrivayuschiy-teg-f#readme",
   "devDependencies": {
+    "@prettier/plugin-pug": "^3.0.0",
     "autoprefixer": "^10.4.16",
+    "browser-sync": "^3.0.2",
     "cssnano": "^6.0.2",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-concat-css": "^3.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
     "gulp-pug": "^5.0.0",
-    "postcss-combine-media-query": "^1.0.1"
+    "gulp-sass": "^5.1.0",
+    "postcss-combine-media-query": "^1.0.1",
+    "prettier": "^3.2.5",
+    "sass": "^1.71.1",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard-scss": "^13.0.0"
   }
 }
