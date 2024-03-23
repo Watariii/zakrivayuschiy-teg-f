@@ -7,9 +7,12 @@
     "test": "echo Привет!",
     "check": "prettier --check ./src/**/*.{pug,scss,html,css,js} --plugin=@prettier/plugin-pug",
     "format": "prettier --write ./src/**/*.{pug,scss,html,css,js} --plugin=@prettier/plugin-pug",
-    "lint": "stylelint './src/**/*.{css,scss}'",
-    "lintfix": "stylelint './src/**/*.{css,scss}' --fix",
-    "dev": "gulp"
+    "lint": "stylelint ./src/**/*.{css,scss}",
+    "lintfix": "stylelint ./src/**/*.{css,scss} --fix",
+    "checkAll": "npm run check && npm run lint",
+    "fixAll": "npm run format && npm run lintfix",
+    "dev": "gulp",
+    "build" : "npm run fixAll && gulp build"
   },
   "repository": {
     "type": "git",
@@ -29,10 +32,12 @@
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-concat-css": "^3.1.0",
+    "gulp-minify": "^3.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
     "gulp-pug": "^5.0.0",
     "gulp-sass": "^5.1.0",
+    "html-minifier": "^4.0.0",
     "postcss-combine-media-query": "^1.0.1",
     "prettier": "^3.2.5",
     "sass": "^1.71.1",

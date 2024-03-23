@@ -1,0 +1,1 @@
+const popup=document.querySelector(".dialog"),popupButtonOpen=document.querySelector(".footer__button"),popupButtonClose=document.querySelector(".popup__button"),page=document.querySelector(".page");popupButtonOpen.addEventListener("click",()=>{popup.showModal()}),popupButtonClose.addEventListener("click",()=>{popup.close()});

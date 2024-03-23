@@ -1,20 +1,153 @@
-/* В этом файле вы опишете значения переменных в разных цветовых схемах.
-Придерживайтесь такого именования классов:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
-*/
+.theme-dark {
+  .page {
+    background-color: var(--background-color);
+    background-image: var(--background-gradient);
+    color: var(--accent-color);
+  }
 
-.theme-dark .page {
-  background-color: var(--background-color);
-  background-image: var(--background-gradient);
-  color: var(--accent-color);
-}
+  .header {
+    border: 2px solid var(--accent-color);
+    background-color: var(--background-color);
+  }
 
-.theme-dark .header,
-.theme-dark .article {
-  border: 2px solid var(--accent-color);
-  background-color: var(--background-color);
+  .card {
+    border: 2px solid var(--accent-color);
+    background-color: var(--background-color);
+
+    &__title {
+      font-variation-settings: var(--font-weight);
+    }
+
+    &__like-button {
+      border: 2px solid var(--accent-color);
+    }
+
+    &__label {
+      color: var(--accent-color);
+      text-shadow:
+        0.5px 0 var(--background-color),
+        0 0.5px var(--background-color),
+        -0.5px 0 var(--background-color),
+        0 -0.5px var(--background-color);
+    }
+
+    @supports (
+      (text-stroke: 0.5px var(--background-color)) or
+        (-webkit-text-stroke: 0.5px var(--background-color))
+    ) {
+      &__label {
+        -webkit-text-stroke: 0.5px var(--background-color);
+
+        // text-stroke: 0.5px var(--background-color);
+        text-shadow: none;
+      }
+    }
+
+    .main-body {
+      fill: transparent;
+      transition: fill 0.3s ease;
+    }
+
+    .core {
+      fill: transparent;
+      transition: fill 0.3s ease 0.03s;
+    }
+
+    .contour {
+      fill: var(--accent-color);
+      transition: fill 0.1s ease;
+    }
+
+    .sparks {
+      fill: var(--heart-color);
+    }
+
+    .is-liked {
+      .main-body {
+        fill: var(--heart-color);
+        transition: fill 0.3s ease 0.05s;
+      }
+
+      .core {
+        fill: var(--heart-color);
+        transition: fill 0.3s ease;
+      }
+
+      .contour {
+        fill: var(--heart-color);
+        transition: fill 0.3s ease 0.1s;
+      }
+
+      &:hover {
+        .main-body {
+          fill: var(--heart-color);
+        }
+
+        .core {
+          fill: var(--heart-color);
+        }
+
+        .contour {
+          fill: var(--heart-color);
+        }
+      }
+    }
+
+    .like-icon {
+      &:hover {
+        .main-body {
+          fill: var(--accent-color);
+          transition: fill 0.3s ease 0.05s;
+        }
+
+        .core {
+          fill: var(--accent-color);
+          transition: fill 0.3s ease;
+        }
+      }
+
+      &:active {
+        .main-body {
+          fill: var(--heart-color);
+          transition: fill 0.3s ease 0.05s;
+        }
+
+        .core {
+          fill: var(--heart-color);
+          transition: fill 0.3s ease;
+        }
+      }
+    }
+  }
+
+  .footer {
+    &__button {
+      border: 2px solid var(--accent-color);
+
+      &::before {
+        background-color: currentcolor;
+      }
+    }
+  }
+
+  .popup {
+    background-color: var(--background-color);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+
+    &__icon {
+      background-color: var(--background-color);
+      color: var(--accent-color);
+    }
+
+    &__button {
+      border: 2px solid var(--accent-color);
+
+      &::before {
+        background-color: currentcolor;
+      }
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,25 +157,300 @@
     color: var(--accent-color);
   }
 
-  .header,
-  .article {
+  .header {
     border: 2px solid var(--accent-color);
     background-color: var(--background-color);
   }
+
+  .card {
+    border: 2px solid var(--accent-color);
+    background-color: var(--background-color);
+
+    &__title {
+      font-variation-settings: var(--font-weight);
+    }
+
+    &__like-button {
+      border: 2px solid var(--accent-color);
+    }
+
+    &__label {
+      color: var(--accent-color);
+      text-shadow:
+        0.5px 0 var(--background-color),
+        0 0.5px var(--background-color),
+        -0.5px 0 var(--background-color),
+        0 -0.5px var(--background-color);
+    }
+
+    @supports (
+      (text-stroke: 0.5px var(--background-color)) or
+        (-webkit-text-stroke: 0.5px var(--background-color))
+    ) {
+      &__label {
+        -webkit-text-stroke: 0.5px var(--background-color);
+
+        // text-stroke: 0.5px var(--background-color);
+        text-shadow: none;
+      }
+    }
+
+    .main-body {
+      fill: transparent;
+      transition: fill 0.3s ease;
+    }
+
+    .core {
+      fill: transparent;
+      transition: fill 0.3s ease 0.03s;
+    }
+
+    .contour {
+      fill: var(--accent-color);
+      transition: fill 0.1s ease;
+    }
+
+    .sparks {
+      fill: var(--heart-color);
+    }
+
+    .is-liked {
+      .main-body {
+        fill: var(--heart-color);
+        transition: fill 0.3s ease 0.05s;
+      }
+
+      .core {
+        fill: var(--heart-color);
+        transition: fill 0.3s ease;
+      }
+
+      .contour {
+        fill: var(--heart-color);
+        transition: fill 0.3s ease 0.1s;
+      }
+
+      &:hover {
+        .main-body {
+          fill: var(--heart-color);
+        }
+
+        .core {
+          fill: var(--heart-color);
+        }
+
+        .contour {
+          fill: var(--heart-color);
+        }
+      }
+    }
+
+    .like-icon {
+      &:hover {
+        .main-body {
+          fill: var(--accent-color);
+          transition: fill 0.3s ease 0.05s;
+        }
+
+        .core {
+          fill: var(--accent-color);
+          transition: fill 0.3s ease;
+        }
+      }
+
+      &:active {
+        .main-body {
+          fill: var(--heart-color);
+          transition: fill 0.3s ease 0.05s;
+        }
+
+        .core {
+          fill: var(--heart-color);
+          transition: fill 0.3s ease;
+        }
+      }
+    }
+  }
+
+  .footer {
+    &__button {
+      border: 2px solid var(--accent-color);
+
+      &::before {
+        background-color: currentcolor;
+      }
+    }
+  }
+
+  .popup {
+    background-color: var(--background-color);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+
+    &__icon {
+      background-color: var(--background-color);
+      color: var(--accent-color);
+    }
+
+    &__button {
+      border: 2px solid var(--accent-color);
+
+      &::before {
+        background-color: currentcolor;
+      }
+    }
+  }
 }
 
-/* _________________________________________________________________________ */
+.theme-light {
+  .page {
+    background-color: var(--background-color);
+    background-image: var(--background-gradient);
+    color: var(--accent-color);
+  }
 
-.theme-light .page {
-  background-color: var(--background-color);
-  background-image: var(--background-gradient);
-  color: var(--accent-color);
-}
+  .header {
+    border: 2px solid var(--accent-color);
+    background-color: var(--background-color);
+  }
 
-.theme-light .header,
-.theme-light .article {
-  border: 2px solid var(--accent-color);
-  background-color: var(--background-color);
+  .card {
+    border: 2px solid var(--accent-color);
+    background-color: var(--background-color);
+
+    &__title {
+      font-variation-settings: var(--font-weight);
+    }
+
+    &__like-button {
+      border: 2px solid var(--accent-color);
+
+      &::before {
+        background-color: var(--white-color);
+      }
+    }
+
+    &__label {
+      color: var(--accent-color);
+      text-shadow:
+        0.5px 0 var(--background-color),
+        0 0.5px var(--background-color),
+        -0.5px 0 var(--background-color),
+        0 -0.5px var(--background-color);
+    }
+
+    @supports (
+      (text-stroke: 0.5px var(--background-color)) or
+        (-webkit-text-stroke: 0.5px var(--background-color))
+    ) {
+      &__label {
+        -webkit-text-stroke: 0.5px var(--background-color);
+
+        // text-stroke: 0.5px var(--background-color);
+        text-shadow: none;
+      }
+    }
+
+    .like-icon {
+      &:hover {
+        .main-body {
+          fill: var(--accent-color);
+          transition: fill 0.3s ease 0.05s;
+        }
+
+        .core {
+          fill: var(--accent-color);
+          transition: fill 0.35s ease;
+        }
+      }
+
+      &:active {
+        .main-body {
+          fill: var(--heart-color);
+          transition: fill 0.3s ease 0.05s;
+        }
+
+        .core {
+          fill: var(--heart-color);
+          transition: fill 0.35s ease;
+        }
+      }
+    }
+
+    .main-body {
+      fill: transparent;
+      transition: fill 0.35s ease;
+    }
+
+    .core {
+      fill: transparent;
+      transition: fill 0.3s ease 0.05s;
+    }
+
+    .sparks {
+      fill: var(--heart-color);
+    }
+
+    .is-liked {
+      .main-body {
+        fill: var(--heart-color);
+        transition: fill 0.3s ease 0.05s;
+      }
+
+      .core {
+        fill: var(--heart-color);
+        transition: fill 0.35s ease;
+      }
+
+      .contour {
+        fill: var(--heart-color);
+        transition: fill 0.3s ease 0.1s;
+      }
+
+      &:hover {
+        .main-body {
+          fill: var(--heart-color);
+        }
+
+        .core {
+          fill: var(--heart-color);
+        }
+
+        .contour {
+          fill: var(--heart-color);
+        }
+      }
+    }
+  }
+
+  .footer {
+    &__button {
+      border: 2px solid var(--accent-color);
+
+      &::before {
+        background-color: var(--background-color);
+      }
+    }
+  }
+
+  .popup {
+    background-color: var(--background-color);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+
+    &__icon {
+      background-color: var(--background-color);
+      color: var(--accent-color);
+    }
+
+    &__button {
+      border: 2px solid var(--accent-color);
+
+      &::before {
+        background-color: var(--background-color);
+      }
+    }
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -52,9 +460,151 @@
     color: var(--accent-color);
   }
 
-  .header,
-  .article {
+  .header {
     border: 2px solid var(--accent-color);
     background-color: var(--background-color);
+  }
+
+  .card {
+    border: 2px solid var(--accent-color);
+    background-color: var(--background-color);
+
+    &__title {
+      font-variation-settings: var(--font-weight);
+    }
+
+    &__like-button {
+      border: 2px solid var(--accent-color);
+
+      &::before {
+        background-color: var(--white-color);
+      }
+    }
+
+    &__label {
+      color: var(--accent-color);
+      text-shadow:
+        0.5px 0 var(--background-color),
+        0 0.5px var(--background-color),
+        -0.5px 0 var(--background-color),
+        0 -0.5px var(--background-color);
+    }
+
+    @supports (
+      (text-stroke: 0.5px var(--background-color)) or
+        (-webkit-text-stroke: 0.5px var(--background-color))
+    ) {
+      &__label {
+        -webkit-text-stroke: 0.5px var(--background-color);
+
+        // text-stroke: 0.5px var(--background-color);
+        text-shadow: none;
+      }
+    }
+
+    .main-body {
+      fill: transparent;
+      transition: fill 0.3s ease;
+    }
+
+    .core {
+      fill: transparent;
+      transition: fill 0.3s ease 0.03s;
+    }
+
+    .contour {
+      fill: var(--accent-color);
+      transition: fill 0.1s ease;
+    }
+
+    .sparks {
+      fill: var(--heart-color);
+    }
+
+    .is-liked {
+      .main-body {
+        fill: var(--heart-color);
+        transition: fill 0.3s ease 0.05s;
+      }
+
+      .core {
+        fill: var(--heart-color);
+        transition: fill 0.3s ease;
+      }
+
+      .contour {
+        fill: var(--heart-color);
+        transition: fill 0.3s ease 0.1s;
+      }
+
+      &:hover {
+        .main-body {
+          fill: var(--heart-color);
+        }
+
+        .core {
+          fill: var(--heart-color);
+        }
+
+        .contour {
+          fill: var(--heart-color);
+        }
+      }
+    }
+
+    .like-icon {
+      &:hover {
+        .main-body {
+          fill: var(--accent-color);
+          transition: fill 0.3s ease 0.05s;
+        }
+
+        .core {
+          fill: var(--accent-color);
+          transition: fill 0.3s ease;
+        }
+      }
+
+      &:active {
+        .main-body {
+          fill: var(--heart-color);
+          transition: fill 0.3s ease 0.05s;
+        }
+
+        .core {
+          fill: var(--heart-color);
+          transition: fill 0.3s ease;
+        }
+      }
+    }
+  }
+
+  .footer {
+    &__button {
+      border: 2px solid var(--accent-color);
+
+      &::before {
+        background-color: var(--background-color);
+      }
+    }
+  }
+
+  .popup {
+    background-color: var(--background-color);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+
+    &__icon {
+      background-color: var(--background-color);
+      color: var(--accent-color);
+    }
+
+    &__button {
+      border: 2px solid var(--accent-color);
+
+      &::before {
+        background-color: var(--background-color);
+      }
+    }
   }
 }

@@ -1,89 +1,111 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --white-color: #fff; // фон
+  --light-grey-color: #e7e7e7; // градиент
+  --grey-color: #d3d3d3; // градиент
+  --black-color: #000; // фон, градиент, акцентый
+  --light-black-color: #1a1a1a; // градиент
+  --light-green-color: #00cc14; // акцентный цвет
+  --green-color: #007f0c; // градиент
+  --dark-green-color: #004306; // градиент
+  --red: #f00; // искры и серцевина сердца
+}
 
 :root.theme-dark {
-  --background-color: #000;
+  --background-color: var(--black-color);
   --background-gradient: repeating-linear-gradient(
       to right,
-      #000,
-      #000 2px,
+      var(--black-color),
+      var(--black-color) 2px,
       transparent 4px,
       transparent 6px
     ),
     repeating-linear-gradient(
       to bottom,
-      #000,
-      #000 2px,
+      var(--black-color),
+      var(--black-color) 2px,
       transparent 4px,
       transparent 6px
     ),
-    linear-gradient(to bottom, #007f0c, #004306);
+    linear-gradient(to bottom, var(--green-color), var(--dark-green-color));
   --font-weight: 800;
-  --accent-color: #00cc14;
+  --accent-color: var(--light-green-color);
+  --heart-color: var(--red);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #000;
+    --background-color: var(--black-color);
     --background-gradient: repeating-linear-gradient(
         to right,
-        #000,
-        #000 2px,
+        var(--black-color),
+        var(--black-color) 2px,
         transparent 4px,
         transparent 6px
       ),
       repeating-linear-gradient(
         to bottom,
-        #000,
-        #000 2px,
+        var(--black-color),
+        var(--black-color) 2px,
         transparent 4px,
         transparent 6px
       ),
-      linear-gradient(to bottom, #007f0c, #004306);
+      linear-gradient(to bottom, var(--green-color), var(--dark-green-color));
     --font-weight: 800;
-    --accent-color: #00cc14;
+    --accent-color: var(--light-green-color);
+    --heart-color: var(--red);
   }
 }
 
 :root.theme-light {
-  --background-color: #fff;
+  --background-color: var(--white-color);
   --background-gradient: repeating-linear-gradient(
       to right,
-      #d3d3d3,
-      #d3d3d3 2px,
+      var(--grey-color),
+      var(--grey-color) 2px,
       transparent 4px,
       transparent 6px
     ),
     repeating-linear-gradient(
       to bottom,
-      #d3d3d3,
-      #d3d3d3 2px,
+      var(--grey-color),
+      var(--grey-color) 2px,
       transparent 4px,
       transparent 6px
     ),
-    linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+    linear-gradient(
+      to bottom,
+      var(--light-grey-color),
+      var(--light-black-color)
+    );
   --font-weight: 700;
-  --accent-color: #000;
+  --accent-color: var(--black-color);
+  --heart-color: var(--red);
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --background-color: #fff;
+    --background-color: var(--white-color);
     --background-gradient: repeating-linear-gradient(
         to right,
-        #d3d3d3,
-        #d3d3d3 2px,
+        var(--grey-color),
+        var(--grey-color) 2px,
         transparent 4px,
         transparent 6px
       ),
       repeating-linear-gradient(
         to bottom,
-        #d3d3d3,
-        #d3d3d3 2px,
+        var(--grey-color),
+        var(--grey-color) 2px,
         transparent 4px,
         transparent 6px
       ),
-      linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+      linear-gradient(
+        to bottom,
+        var(--light-grey-color),
+        var(--light-black-color)
+      );
     --font-weight: 700;
-    --accent-color: #000;
+    --accent-color: var(--black-color);
+    --heart-color: var(--red);
   }
 }
