@@ -8,7 +8,7 @@
 
 Адаптивный одностраничный сайт с темизацией и анимацией.
 
-HTML, SCSS, Javascript, Pug, git.
+HTML, SCSS, Javascript, Pug, gulp.js, git.
 
 ## Статус проекта
 
